@@ -335,7 +335,7 @@ ath_pktlog, wlan_scan_ap
 
 | CVE | Type | CVSS | Description |
 |-----|------|------|-------------|
-| **CVE-2022-30024** | Command Injection | 9.8 | **This vulnerability** — auth RCE via diagnostic ping |
+| **** | Command Injection | 9.8 | **This vulnerability** — auth RCE via diagnostic ping |
 | **CVE-2025-25897** | Buffer Overflow | N/A | DoS via `/userRpm/WanStaticIpV6CfgRpm.htm` (`ip` param) |
 | **CVE-2025-25901** | Buffer Overflow | 7.5 | DoS via `/userRpm/WanSlaacCfgRpm.htm` (`dnsserver` params) |
 | **CVE-2025-53714** | Buffer Overflow | 7.5 | DoS via `/userRpm/WlanNetworkRpm_APC.htm` |
@@ -455,5 +455,5 @@ This repository does not include an explicit open-source license. By default, al
 
 - **Author:** Matad0r
 - **Repository:** TP-Link TL-WR841ND V11 — Command Injection PoC & Analysis
-- **CVE:** CVE-2022-30024
+- **CVE:** 
 - **Date:** 2026-07-19
