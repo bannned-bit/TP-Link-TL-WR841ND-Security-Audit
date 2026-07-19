@@ -8,7 +8,7 @@
 
 ## Quick summary
 
-- A Python PoC (exploir.py) demonstrates an OS command injection vulnerability in TP-Link TL-WR841ND V11 firmware's diagnostic functions (ping/traceroute web forms).
+- A Python PoC (exploit.py) demonstrates an OS command injection vulnerability in TP-Link TL-WR841ND V11 firmware's diagnostic functions (ping/traceroute web forms).
 - Vulnerable endpoint(s): `/userRpm/PingIframeRpm.htm`, `/userRpm/DiagnosticRpm.htm`
 - Vulnerable parameter: `ping_addr` (unsanitized user input used in a system ping command)
 - Root cause: user input concatenated into a shell command and executed (e.g., via `popen()`/system call) without validation.
@@ -30,14 +30,14 @@ If you are a vendor or administrator and you find this vulnerability in your env
 
 ## Files in this repository
 
-- `exploir.py` — Main PoC exploit script (Python 3). Contains the full testing and exploitation workflow, banners, output formatting, and payloads used for confirmation.
+- `exploit.py` — Main PoC exploit script (Python 3). Contains the full testing and exploitation workflow, banners, output formatting, and payloads used for confirmation.
 - `README.md` — (this file) explains the vulnerability, how the PoC works, how to run it safely, and mitigation recommendations.
 
 ---
 
 ## How the PoC works (high level)
 
-The PoC performs the following phases (implemented in `exploir.py`):
+The PoC performs the following phases (implemented in `exploit.py`):
 
 1. Reconnaissance — checks target reachability and looks for TP-Link web interface hints.
 2. Authentication — attempts HTTP Basic authentication with default credentials (`admin:admin`) and sets headers/cookies.
@@ -58,14 +58,14 @@ Environment requirements:
 Example usage (ONLY on targets you own/are authorized to test):
 
 ```bash
-python3 exploir.py -t 192.168.0.1 -p 80 -u admin -P admin
+python3 exploit.py -t 192.168.0.1 -p 80 -u admin -P admin
 ```
 
 The script will show a disclaimer and ask for confirmation before proceeding.
 
 ---
 
-## Code analysis (exploir.py)
+## Code analysis (exploit.py)
 
 Overview:
 - The PoC is a single-file Python program implementing a stateful HTTP session, default credentials, and a multi-step test/exploit flow.
@@ -153,6 +153,6 @@ This repository does not include an explicit open-source license. By default, al
 
 ## Contact / Credits
 
-- Original PoC author mentioned in the script header: "Matad0r Maghribi"
+- Original PoC author mentioned in the script header: "Matad0r "
 - Repo description: "PoC exploit : Critical command injection in TP-Link TL-WR841ND V11 firmware. Allows root access via diagnostic ping. CVSS 9.8. Firmware security research."
 
