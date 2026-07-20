@@ -4,7 +4,7 @@
 
 > This repository contains a proof-of-concept (PoC) exploit script and a full analysis of the vulnerability extracted from the firmware binary. It is provided for educational and authorized security testing only.
 
----
+----
 
 ## Quick Summary
 
